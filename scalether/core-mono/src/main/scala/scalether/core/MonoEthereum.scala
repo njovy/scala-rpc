@@ -89,6 +89,9 @@ class MonoEthereum(transport: MonoRpcTransport)
   override def ethGetCode(address: Address, defaultBlockParameter: String): Mono[Binary] =
     super.ethGetCode(address, defaultBlockParameter)
 
+  override def ethGetStorageAt(address: Address, position: BigInteger, defaultBlockParameter: String): Mono[Binary] =
+    super.ethGetStorageAt(address, position, defaultBlockParameter)
+
   override def ethEstimateGas(transaction: Transaction, defaultBlockParameter: String): Mono[BigInteger] =
     super.ethEstimateGas(transaction, defaultBlockParameter)
 

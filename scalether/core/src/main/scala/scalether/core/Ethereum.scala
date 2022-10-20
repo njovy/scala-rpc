@@ -86,6 +86,9 @@ class Ethereum[F[_]](transport: RpcTransport[F])
 
   def ethGetCode(address: Address, defaultBlockParameter: String): F[Binary] =
     exec("eth_getCode", address, defaultBlockParameter)
+
+  def ethGetStorageAt(address: Address, position: BigInteger, defaultBlockParameter: String): F[Binary] =
+    exec("eth_getStorageAt", address, position, defaultBlockParameter)
 }
 
 object Ethereum {

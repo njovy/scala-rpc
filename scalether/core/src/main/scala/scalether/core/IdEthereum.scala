@@ -80,6 +80,9 @@ class IdEthereum(transport: IdRpcTransport) extends Ethereum[Id](transport) {
   override def ethGetCode(address: Address, defaultBlockParameter: String): Binary = super.ethGetCode(address, defaultBlockParameter)
 
   @throws[RpcException]
+  override def ethGetStorageAt(address: Address, position: BigInteger, defaultBlockParameter: String): Binary = super.ethGetStorageAt(address, position, defaultBlockParameter)
+
+  @throws[RpcException]
   override def exec[T](method: String, params: Any*)(implicit mf: Manifest[T]): T = super.exec(method, params:_*)
 
   @throws[RpcException]
